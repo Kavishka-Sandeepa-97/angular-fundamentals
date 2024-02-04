@@ -1,0 +1,19 @@
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">First Name</label>
+    <input type="text" class="form-control" [(ngModel)]="student.firstName" placeholder="First Name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+    <input type="text" class="form-control"  [(ngModel)]="student.lastName" placeholder="Last Name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Contact Number</label>
+    <input type="number" class="form-control"  [(ngModel)]="student.phone" placeholder="contatct Number">
+  </div>
+  <div>
+
+  <div class="mb-3">
+    <button class="btn btn-primary" (click)="createStudent()" [disabled]="!isSubmitEnable">submit</button>
+  </div>
+  
+ 
