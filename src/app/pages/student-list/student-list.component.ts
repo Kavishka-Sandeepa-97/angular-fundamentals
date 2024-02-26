@@ -23,4 +23,12 @@ export class StudentListComponent implements OnInit {
       this.studentList=data;
     });
   }
+  deleteStudent(student:any){
+    //console.log(student);
+    this.http.delete(`http://localhost:8080/${student.id}`)
+    .subscribe((data)=>{
+      console.log(data);
+      this.loadTable();
+    });
+  }
 }

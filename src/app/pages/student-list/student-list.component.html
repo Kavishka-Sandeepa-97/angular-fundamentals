@@ -5,6 +5,7 @@
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">contatct Number</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
         <td>{{student.firstName}}</td>
         <td>{{student.lastName}}</td>
         <td>{{student.phone}}</td>
+        <td><button (click)="deleteStudent(student)" class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
       </tr>
      
     </tbody>
@@ -21,3 +23,9 @@
   <div *ngIf="!studentList" class="spinner-border text-success" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
