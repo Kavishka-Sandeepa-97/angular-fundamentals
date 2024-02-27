@@ -2,14 +2,14 @@
    
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a routerLink="/" class="nav-link active" aria-current="page">
+      <li (click)="setselectedMenue('home')" class="nav-item">
+        <a [ngClass]="{'active':selectedMenue=='home'}" routerLink="/"  class="nav-link active" aria-current="page">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
           Home
         </a>
       </li>
-      <li>
-        <a href="#" class="nav-link link-body-emphasis">
+      <li (click)="setselectedMenue('dashboard')">
+        <a [ngClass]="{'active':selectedMenue=='dashboard'}" href="#"  class="nav-link link-body-emphasis">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
           Dashboard
         </a>

@@ -10,9 +10,10 @@ export class StudentListComponent implements OnInit {
 
   private http;
   public studentList:any=null;
+  public selectedStudent:any;
+
   constructor(private httpX:HttpClient){
-      this.http=httpX;
-      
+      this.http=httpX;   
   }
   ngOnInit(): void {
    this.loadTable();
@@ -23,12 +24,26 @@ export class StudentListComponent implements OnInit {
       this.studentList=data;
     });
   }
-  deleteStudent(student:any){
+  deleteStudent(){
     //console.log(student);
-    this.http.delete(`http://localhost:8080/${student.id}`)
+    this.http.delete("http://localhost:8080/"+this.selectedStudent.id)
     .subscribe((data)=>{
       console.log(data);
       this.loadTable();
     });
+  }
+
+  selectStudent(student:any){
+      this.selectedStudent=student;
+  }
+
+ 
+  updateStudent(){
+    
+    this.http.post("http://localhost:8080/save-student",this.selectedStudent)
+    .subscribe((data)=>{
+      this.loadTable();
+  })
+  
   }
 }
